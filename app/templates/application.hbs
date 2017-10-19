@@ -1,1 +1,5 @@
-{{outlet}}
+{{model}}
+<form {{action 'sendTo' model on='submit'}}>
+  {{input type="text" value=model}}
+  <button> Send! </button>
+</form>
