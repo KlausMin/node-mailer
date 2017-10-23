@@ -1,0 +1,27 @@
+import Route from '@ember/routing/route';
+
+export default Route.extend({
+  actions: {
+    mailing(model){
+      var nodemailer = require('Browserify');
+
+      var transporter = nodemailer.createTransport({
+        service : 'Gmail',  //smtp server
+        auth : {
+          user : 'skyfpt1@gmail.com',
+          pass : 'energetic4936!'
+        }
+      });
+
+      const mailOptions = {
+        from : 'service@9ple.com',
+        to : model, //Reciever Email Address
+        subject: 'ttest', // Subject line
+        text: 'test',
+        html: '<p><h1>html contents</h1></p>'
+      };
+
+      transporter.sendMail(mailOptions);
+    }
+  }
+});
