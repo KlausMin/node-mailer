@@ -16,7 +16,7 @@ export default Route.extend({
 
       const mailOptions = {
         from : 'service@9ple.com',
-        to : 'skyfpt@naver.com', //Reciever Email Address
+        to : model, //Reciever Email Address
         subject: 'ttest', // Subject line
         text: 'test',
         html: '<p><h1>html contents</h1></p>'
